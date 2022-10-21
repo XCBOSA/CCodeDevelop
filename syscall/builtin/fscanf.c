@@ -1,3 +1,5 @@
+#include <builtin_defs.h>
+
 int GenericCCDScanf(int file, char *format, void *scanfArg[8], int scanfArgCount, ASTParser *Parser) {
     int parseCount = 0;
     char *fmt = malloc(strlen(format) + 1), *fmtbkup = fmt;

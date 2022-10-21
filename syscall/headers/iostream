@@ -1,0 +1,34 @@
+/*
+ filesummary.CH: 只提供cin和cout (C++ 输入输出方式)。  \n注意：标准C没有提供任何类型和符号拓展机制方法，此App依然仅支持C语言，但会继续添加部分C++语法及功能。这个头文件的实现并不是C语言文件，而是编译器内置的行为之一，不能使用能在此App运行的其它代码复现。  \n
+ filesummary.EN: Provide cin and cout (C++ IO Method).  \nNote: Standard C language has no class or operator override method, this source file can't be implement by any code of this App, it is compiler builtin behavior.  \n
+ keyword.r: using namespace
+ CH: 得知大家非常喜欢C++的输入输出方式，在不实现C++类的基础上用魔法实现的cout，可以使用 cout << "abc" << 123 << endl; 输出啦！(实际为调用stdio.h的fprintf)
+ EN: I know that everyone likes the input / output method of C++ very much. For cout implemented by magic on the basis of not implementing C++ classes, you can use cout << "abc" << 123 << endl; to output it! (actually that calls fprintf in stdio.h)
+ */
+ostream cout;
+
+/*
+ CH: 得知大家非常喜欢C++的输入输出方式，在不实现C++类的基础上用魔法实现的cin，可以使用 cin >> a >> b; 输入啦！(实际为调用stdio.h的fscanf)
+ EN: I know that everyone likes the input / output method of C++ very much. To implement cin with magic on the basis of not implementing C++ classes, you can use cin >> a >> b; to input it! (actually that calls fscanf in stdio.h)
+ */
+istream cin;
+
+/*
+ CH: 等同于cout
+ EN: 等同于cin
+ */
+ostream cerr;
+
+/*
+ CH: 模拟的C++ ostream，当前此类没有构造函数不能构造，仅用于 cout cerr 等抽象文件
+ EN: Simulated C++ ostream, this class has no initializer, can't create instance, only use in cout and cerr.
+ */
+typedef builtin ostream;
+
+/*
+ CH: 模拟的C++ istream，当前此类没有构造函数不能构造，仅用于 cin 等抽象文件
+ EN: Simulated C++ istream, this class has no initializer, can't create instance, only use in cin.
+ */
+typedef builtin istream;
+
+#include <stdio.h>
