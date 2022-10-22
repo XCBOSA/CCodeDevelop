@@ -22,15 +22,8 @@ public class FrontendWrapper {
         sf_setup_pid = setup(forInstance:)
         sf_cleanup_pid = cleanUp(forPid:)
         
-        sf_require_ccduicomp_h = {
-            let str = (try? String(contentsOfFile: Bundle.main.resourcePath! + "/CodeAnalyserFile/ccduicomp.h")) ?? ""
-            return NSString(string: str).cString(using: String.Encoding.utf8.rawValue)
-        }
-        sf_require_stdlib_intrinsic_h = {
-            let str = (try? String(contentsOfFile: Bundle.main.resourcePath! + "/CodeAnalyserFile/stdlib_intrinsic.h")) ?? ""
-            return NSString(string: str).cString(using: String.Encoding.utf8.rawValue)
-        }
-        
+        some_other_works_to_initialize();
+
         // Todo: Add Wrapper initialization
         TreeObjectWrapper.initWrapper()
         CCDUIWrapper.initWrapper()
